@@ -1,3 +1,6 @@
+#Script for detaching LUNs asynchronously
+#https://medium.com/@theredpot
+
 $vCenter = ""
 $cred = Get-Credential
 
@@ -11,13 +14,6 @@ $esxiObjects = Get-VMHost $hostsESXi.hostname
 $lunFile = "./lun_list.csv"
 $luns = import-csv $lunFile -delimiter ";"
 $lunObjects = $luns.lun
-
-# function Detach-LUN-Async {
-	# param([string] $lunUuid,[object] $storSys)
-	
-	# $storSys.DetachScsiLun($lunUuid)
-
-# }
 
 foreach ($lun in $lunObjects){
 	
