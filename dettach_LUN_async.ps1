@@ -17,8 +17,6 @@ $lunObjects = $luns.lun
 
 foreach ($lun in $lunObjects){
 	
-	#$tasks = New-Object System.Collections.Generic.List[object]
-	
 	foreach ($esxi in $esxiObjects){
 		write-host “Starting $esxi”
 		
